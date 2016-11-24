@@ -563,7 +563,7 @@ declare interface WXStatic {
 	/**
 	创建并返回 audio 上下文 audioContext 对象
 	**/
-	createAudioContext(): any;
+	createAudioContext(audioId: string): any;
 
 	///////////////////////////////////////////////////////////////
 	// 媒体-视频组件控制
@@ -571,7 +571,7 @@ declare interface WXStatic {
 	/**
 	创建并返回 video 上下文 videoContext 对象
 	**/
-	createVideoContext(): any;
+	createVideoContext(videoId: string): any;
 
 	///////////////////////////////////////////////////////////////
 	// 数据-数据缓存
@@ -604,7 +604,7 @@ declare interface WXStatic {
 	/**
 	将 data 存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个同步接口。
 	**/
-	setStorageSync(obj: {
+	setStorageSync(
 		/**
 		本地缓存中的指定的 key
 		**/
@@ -613,7 +613,7 @@ declare interface WXStatic {
 		需要存储的内容
 		**/
 		data: any
-	});
+	);
 	/**
 	从本地缓存中异步获取指定 key 对应的内容。
 	**/
@@ -638,12 +638,12 @@ declare interface WXStatic {
 	/**
 	从本地缓存中同步获取指定 key 对应的内容。
 	**/
-	getStorageSync(obj: {
+	getStorageSync(
 		/**
 		本地缓存中的指定的 key
 		**/
 		key: string
-	});
+	);
 	/**
 	异步获取当前storage的相关信息
 	**/
@@ -689,12 +689,12 @@ declare interface WXStatic {
 	/**
 	从本地缓存中同步移除指定 key 。
 	**/
-	removeStorageSync(obj: {
+	removeStorageSync(
 		/**
 		本地缓存中的指定的 key
 		**/
 		key: string
-	});
+	);
 	/**
 	清理本地数据缓存。
 	**/
